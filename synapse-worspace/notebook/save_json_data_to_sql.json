@@ -4,20 +4,20 @@
 		"nbformat": 4,
 		"nbformat_minor": 2,
 		"bigDataPool": {
-			"referenceName": "defsparkpool",
+			"referenceName": "echosparkpool",
 			"type": "BigDataPoolReference"
 		},
 		"sessionProperties": {
-			"driverMemory": "224g",
-			"driverCores": 32,
-			"executorMemory": "224g",
-			"executorCores": 32,
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
 			"numExecutors": 2,
 			"conf": {
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "390b547d-694a-4852-8f02-44f9080c6b8d"
+				"spark.autotune.trackingId": "01a95e4e-3fe0-478f-bd6e-958a2f6b655d"
 			}
 		},
 		"metadata": {
@@ -31,18 +31,18 @@
 				"name": "csharp"
 			},
 			"a365ComputeOptions": {
-				"id": "/subscriptions/a1a27566-3e3c-42d7-a372-692095cd8521/resourceGroups/SerengetiDataLab/providers/Microsoft.Synapse/workspaces/serengetidatalabqezfaqkj/bigDataPools/defsparkpool",
-				"name": "defsparkpool",
+				"id": "/subscriptions/2aa92634-96f9-45f8-a0aa-a3789b73ce2d/resourceGroups/rgp-salvo-sbx/providers/Microsoft.Synapse/workspaces/synapse-salvo/bigDataPools/echosparkpool",
+				"name": "echosparkpool",
 				"type": "Spark",
-				"endpoint": "https://serengetidatalabqezfaqkj.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/defsparkpool",
+				"endpoint": "https://synapse-salvo.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/echosparkpool",
 				"auth": {
 					"type": "AAD",
 					"authResource": "https://dev.azuresynapse.net"
 				},
-				"sparkVersion": "3.2",
-				"nodeCount": 3,
-				"cores": 32,
-				"memory": 224,
+				"sparkVersion": "3.1",
+				"nodeCount": 10,
+				"cores": 4,
+				"memory": 28,
 				"automaticScaleJobs": false
 			},
 			"sessionKeepAliveTimeout": 120

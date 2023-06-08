@@ -4,20 +4,20 @@
 		"nbformat": 4,
 		"nbformat_minor": 2,
 		"bigDataPool": {
-			"referenceName": "defsparkpool",
+			"referenceName": "echosparkpool",
 			"type": "BigDataPoolReference"
 		},
 		"sessionProperties": {
-			"driverMemory": "224g",
-			"driverCores": 32,
-			"executorMemory": "224g",
-			"executorCores": 32,
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
 			"numExecutors": 2,
 			"conf": {
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "a4de8630-4eca-4e94-a3d4-38ddc51ebe55"
+				"spark.autotune.trackingId": "b22d74bc-2d46-42da-99b9-2e570be30f0d"
 			}
 		},
 		"metadata": {
@@ -31,18 +31,18 @@
 				"name": "python"
 			},
 			"a365ComputeOptions": {
-				"id": "/subscriptions/a1a27566-3e3c-42d7-a372-692095cd8521/resourceGroups/SerengetiDataLab/providers/Microsoft.Synapse/workspaces/serengetidatalabqezfaqkj/bigDataPools/defsparkpool",
-				"name": "defsparkpool",
+				"id": "/subscriptions/2aa92634-96f9-45f8-a0aa-a3789b73ce2d/resourceGroups/rgp-salvo-sbx/providers/Microsoft.Synapse/workspaces/synapse-salvo/bigDataPools/echosparkpool",
+				"name": "echosparkpool",
 				"type": "Spark",
-				"endpoint": "https://serengetidatalabqezfaqkj.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/defsparkpool",
+				"endpoint": "https://synapse-salvo.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/echosparkpool",
 				"auth": {
 					"type": "AAD",
 					"authResource": "https://dev.azuresynapse.net"
 				},
-				"sparkVersion": "3.2",
-				"nodeCount": 3,
-				"cores": 32,
-				"memory": 224,
+				"sparkVersion": "3.1",
+				"nodeCount": 10,
+				"cores": 4,
+				"memory": 28,
 				"automaticScaleJobs": false
 			},
 			"sessionKeepAliveTimeout": 30
@@ -53,7 +53,7 @@
 				"metadata": {
 					"jupyter": {
 						"source_hidden": false,
-						"outputs_hidden": false
+						"outputs_hidden": true
 					},
 					"nteract": {
 						"transient": {
@@ -87,13 +87,13 @@
 					"sc = SparkSession.builder.getOrCreate()\n",
 					"token_library = sc._jvm.com.microsoft.azure.synapse.tokenlibrary.TokenLibrary\n",
 					"\n",
-					"vault_name = 'serengetikeyvaultqezfaqk'\n",
+					"vault_name = 'serengetikeyvaultzu7oys3'\n",
 					"linkConnectionName = ''\n",
 					"\n",
 					"pool_connection_string = mssparkutils.credentials.getSecret(vault_name, 'DedicatedPool-Jdbc-ConnectionString', linkConnectionName)\n",
 					"adls_connection_string = mssparkutils.credentials.getSecret(vault_name, 'ADLS-ConnectionString', linkConnectionName)"
 				],
-				"execution_count": 2
+				"execution_count": 4
 			},
 			{
 				"cell_type": "code",
@@ -130,7 +130,7 @@
 					"\n",
 					"df_val = df_val.toPandas()"
 				],
-				"execution_count": 117
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -152,7 +152,7 @@
 					"df_train[\"image_link\"] = df_train[\"image_id\"].apply(imageURL)\n",
 					"df_val[\"image_link\"] = df_val[\"image_id\"].apply(imageURL)"
 				],
-				"execution_count": 118
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -180,7 +180,7 @@
 					"    except Exception as e:\n",
 					"        print(e)"
 				],
-				"execution_count": 119
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -242,7 +242,7 @@
 					"\n",
 					""
 				],
-				"execution_count": 120
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -260,7 +260,7 @@
 				"source": [
 					"initialize_adls_account()"
 				],
-				"execution_count": 121
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -280,7 +280,7 @@
 					"    image_url, image_name, category, table = args\n",
 					"    upload_image(image_url, image_name, category, table)"
 				],
-				"execution_count": 122
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -299,7 +299,7 @@
 					"for item in df_train.iloc:\n",
 					"    upload_image(item.image_link, item.image_id.split('/').pop(), item.category_name, 'train')"
 				],
-				"execution_count": 123
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
