@@ -31,11 +31,7 @@
 			"metadata": "Secure string for 'connectionString' of 'synapse-salvo-WorkspaceDefaultSqlServer'",
 			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:synapse-salvo.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
 		},
-		"AzureKeyVault_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://serengetikeyvaultzu7oys3.vault.azure.net/"
-		},
-		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+		"AZKV_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://serengetikeyvaultzu7oys3.vault.azure.net/"
 		},
@@ -515,27 +511,14 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('workspaceName'), '/AzureKeyVault')]",
+			"name": "[concat(parameters('workspaceName'), '/AZKV')]",
 			"type": "Microsoft.Synapse/workspaces/linkedServices",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
 				"annotations": [],
 				"type": "AzureKeyVault",
 				"typeProperties": {
-					"baseUrl": "[parameters('AzureKeyVault_properties_typeProperties_baseUrl')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('workspaceName'), '/AzureKeyVault1')]",
-			"type": "Microsoft.Synapse/workspaces/linkedServices",
-			"apiVersion": "2019-06-01-preview",
-			"properties": {
-				"annotations": [],
-				"type": "AzureKeyVault",
-				"typeProperties": {
-					"baseUrl": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					"baseUrl": "[parameters('AZKV_properties_typeProperties_baseUrl')]"
 				}
 			},
 			"dependsOn": []
@@ -784,7 +767,7 @@
 						"spark.dynamicAllocation.enabled": "false",
 						"spark.dynamicAllocation.minExecutors": "2",
 						"spark.dynamicAllocation.maxExecutors": "2",
-						"spark.autotune.trackingId": "cdb4b967-cc9a-4c49-8ed8-3abfca3e0e89"
+						"spark.autotune.trackingId": "5eb30f25-b54d-43f8-8464-e5897e32f58c"
 					}
 				},
 				"metadata": {
@@ -886,7 +869,7 @@
 							"string destConnectionString = Credentials.GetSecret(vaultName,\"ADLS-ConnectionString\", linkConnectionName);"
 						],
 						"outputs": [],
-						"execution_count": 7
+						"execution_count": 8
 					},
 					{
 						"cell_type": "code",

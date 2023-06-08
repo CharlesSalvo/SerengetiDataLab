@@ -20,10 +20,7 @@
 		"synapse-salvo-WorkspaceDefaultSqlServer_connectionString": {
 			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:synapse-salvo.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
 		},
-		"AzureKeyVault_properties_typeProperties_baseUrl": {
-			"value": "https://serengetikeyvaultzu7oys3.vault.azure.net/"
-		},
-		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+		"AZKV_properties_typeProperties_baseUrl": {
 			"value": "https://serengetikeyvaultzu7oys3.vault.azure.net/"
 		},
 		"serengetidatalabebtzxmew-WorkspaceDefaultStorage_properties_typeProperties_url": {
