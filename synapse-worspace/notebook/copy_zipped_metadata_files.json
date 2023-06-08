@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "dbe08676-fe69-45a7-b222-2cef6e3a9738"
+				"spark.autotune.trackingId": "cdb4b967-cc9a-4c49-8ed8-3abfca3e0e89"
 			}
 		},
 		"metadata": {
@@ -114,11 +114,11 @@
 					"CloudBlobDirectory destDirectory;\n",
 					"\n",
 					"var vaultName = \"serengetikeyvaultzu7oys3\";\n",
-					"var linkConnectionName = \"AzureKeyVault1\";\n",
+					"var linkConnectionName = \"AzureKeyVault\";\n",
 					"\n",
 					"string destConnectionString = Credentials.GetSecret(vaultName,\"ADLS-ConnectionString\", linkConnectionName);"
 				],
-				"execution_count": 5
+				"execution_count": 7
 			},
 			{
 				"cell_type": "code",
