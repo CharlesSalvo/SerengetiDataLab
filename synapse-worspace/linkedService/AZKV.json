@@ -1,0 +1,10 @@
+{
+	"name": "AZKV",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://serengetikeyvaultzu7oys3.vault.azure.net/"
+		}
+	}
+}
