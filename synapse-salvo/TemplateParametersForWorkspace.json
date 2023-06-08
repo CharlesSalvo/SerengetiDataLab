@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "synapse-salvo"
+		},
+		"SynapseSQLDemo_connectionString": {
+			"value": ""
+		},
+		"serengetidatalabebtzxmew-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:serengetidatalabebtzxmew.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"serengetidatalabgt5ef5jr-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:serengetidatalabgt5ef5jr.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"serengetidatalabygazyf5k-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:serengetidatalabygazyf5k.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"synapse-salvo-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:synapse-salvo.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"AzureKeyVault_properties_typeProperties_baseUrl": {
+			"value": "https://serengetikeyvaultzu7oys3.vault.azure.net/"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://serengetikeyvaultzu7oys3.vault.azure.net/"
+		},
+		"serengetidatalabebtzxmew-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://serengetistoreebtzxmewxu.dfs.core.windows.net/"
+		},
+		"synapse-salvo-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://adlsalvosynapse.dfs.core.windows.net"
+		}
+	}
+}
