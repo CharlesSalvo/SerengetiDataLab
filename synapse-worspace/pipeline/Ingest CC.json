@@ -1,0 +1,251 @@
+{
+	"name": "Ingest CC",
+	"properties": {
+		"description": "Ingest credit card data",
+		"activities": [
+			{
+				"name": "Copy_z49",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "synapse//sample-data.csv"
+					},
+					{
+						"name": "Destination",
+						"value": "ccdata.sample-data"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings",
+							"skipLineCount": 0
+						}
+					},
+					"sink": {
+						"type": "SqlServerSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "SSN",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SSN",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "gender",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "gender",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "birthdate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "birthdate",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "maiden name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "maiden name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "last name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "last name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "first name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "first name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "address",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "city",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "city",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "state",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "state",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "zip",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "zip",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "phone",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "phone",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "email",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "email",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "cc_type",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "cc_type",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CCN",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CCN",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "cc_cvc",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "cc_cvc",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "cc_expiredate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "cc_expiredate",
+									"type": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_z49",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_z49",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-03-17T14:01:44Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

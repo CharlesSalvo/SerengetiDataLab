@@ -1,0 +1,17 @@
+{
+	"name": "DestinationDataset_z49",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SynapseSQLDemo",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "ccdata",
+			"table": "sample-data"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}
